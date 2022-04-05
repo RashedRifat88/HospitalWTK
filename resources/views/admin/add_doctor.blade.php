@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>Hospital Admin</title>
     <!-- plugins:css -->
     @include('admin.css')
 </head>
@@ -34,16 +34,28 @@
     <!-- partial:partials/_sidebar.html -->
 @include('admin.sidebar')
 <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
-        <!-- partial:partials/_navbar.html -->
+
+    <!-- partial:partials/_navbar.html -->
 
     @include('admin.navbar')
 
-    <!-- partial -->
 
-    @include('admin.body')
+    <div class="container-fluid page-body-wrapper">
 
-    <!-- main-panel ends -->
+{{--        <h1>Add Doctor</h1>--}}
+
+        <div class="container" align="center">
+
+            <form>
+                <div>
+                    <label>Doctor Name </label>
+                    <input type="text" style="color:black;" name="name" placeholder="Type doctor name">
+                </div>
+            </form>
+
+        </div>
+
+
     </div>
     <!-- page-body-wrapper ends -->
 </div>
