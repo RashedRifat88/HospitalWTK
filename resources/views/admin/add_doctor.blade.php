@@ -5,7 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Hospital Admin</title>
-    <!-- plugins:css -->
+
+
+    <style type="text/css">
+        label{
+            display: inline-block;
+            width: 200px;
+        }
+
+    </style>
+
     @include('admin.css')
 </head>
 <body>
@@ -44,13 +53,47 @@
 
 {{--        <h1>Add Doctor</h1>--}}
 
-        <div class="container" align="center">
+        <div class="container" align="center" style="padding-top: 100px;">
 
-            <form>
-                <div>
-                    <label>Doctor Name </label>
+            <form action="{{url('upload_doctor')}}" method="post" enctype="multipart/form-data">
+                @csrf
+
+                <div style="padding: 15px;">
+                    <label>Doctor Name</label>
                     <input type="text" style="color:black;" name="name" placeholder="Type doctor name">
                 </div>
+
+                <div style="padding: 15px;">
+                    <label>Phone</label>
+                    <input type="number" style="color:black;" name="phone" placeholder="Type doctor phone number">
+                </div>
+
+                <div style="padding: 15px;">
+                    <label>Speciality</label>
+                    <select name="speciality" style="color: black; width: 200px;">
+                        <option>--select--</option>
+                        <option value="skin">Skin</option>
+                        <option value="heart">Heart</option>
+                        <option value="lungs">Lungs</option>
+                        <option value="eye">Eye</option>
+                    </select>
+                </div>
+
+                <div style="padding: 15px;">
+                    <label>Room No</label>
+                    <input type="text" style="color:black;" name="room_no" placeholder="Type doctor room no">
+                </div>
+
+                <div style="padding: 15px;">
+                    <label>Doctor Image</label>
+                    <input type="file"  name="file">
+                </div>
+
+                <div style="padding: 15px;">
+                    <input type="submit"  class="btn btn-success">
+                </div>
+
+
             </form>
 
         </div>
